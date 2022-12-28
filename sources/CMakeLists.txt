@@ -1,35 +1,19 @@
-### CMakeLists.txt: Sources CMake
+### CMakeLists.txt: NanoTekSpice source CMake file
 ###
-### 2022, December 21
+### 2022, December 28
 ### Author: Corentin COUTRET-ROZET (corentin.rozet@epitech.eu)
 ###
 ### Copyright 2022, Corentin COUTRET-ROZET
 
-add_executable(example)
+include_directories(
+    ${CMAKE_CURRENT_DIR}
+)
 
-target_sources(example
-    PRIVATE
-        example.cpp
-    PUBLIC
-        example.hpp
-    )
+set(SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/example.cpp
+)
 
-target_include_directories(example
-    PUBLIC
-        ${CMAKE_CURRENT_LIST_DIR}
-    )
-
-# # Get code coverage
-# # (Only valid with the GNU compiler and on Linux)
-# if(CMAKE_CXX_COMPILER_ID MATCHES GNU AND CMAKE_HOST_SYSTEM_NAME STREQUAL "Linux")
-#     find_program(GCOV_PATH gcov)
-#     if(NOT GCOV_PATH)
-#     message(FATAL_ERROR "Code coverage analysis requires gcov!")
-#     endif()
-#     target_compile_options(example
-#         PUBLIC "--coverage"
-#         )
-#     target_link_options(example
-#         INTERFACE "--coverage"
-#         )
-# endif()
+add_executable(
+    ${PROJECT_NAME}
+    ${SOURCES}
+)

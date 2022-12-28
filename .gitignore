@@ -1,6 +1,6 @@
 ### .gitignore
 ###
-### 2022, December 21
+### 2022, December 28
 ### Author: Corentin COUTRET-ROZET (corentin.rozet@epitech.eu)
 ###
 ### Copyright 2022, Corentin COUTRET-ROZET
@@ -54,3 +54,4 @@ build
 
 # Others
 .vscode
+documentation
