@@ -12,7 +12,7 @@
 
 int main(int ac, char **av)
 {
-    nts::System system;
+    nts::System system(ac, av);
 
-    return system.run(ac, av);
+    return system.run();
 }

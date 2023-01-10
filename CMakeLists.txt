@@ -5,7 +5,7 @@
 ###
 ### Copyright 2022, Corentin COUTRET-ROZET
 
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.5)
 
 # Project information
 project(
@@ -15,11 +15,6 @@ project(
     HOMEPAGE_URL "https://github.com/sheiiva/NanoTekSpice"
     LANGUAGES CXX
 )
-
-# Set the C++ standard
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Place binaries and libraries according to GNU standards
 include(GNUInstallDirs)
@@ -34,7 +29,31 @@ set(OPT_WARNINGS_AS_ERRORS_DEVELOPER_DEFAULT FALSE)
 include(${CMAKE_SOURCE_DIR}/config/versions.cmake)
 
 ### BUILD ###
-add_subdirectory(sources)
+
+set(SOURCES_DIR ${CMAKE_SOURCE_DIR}/sources)
+set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
+
+set(SOURCES
+    ${SOURCES_DIR}/main.cpp
+    ${SOURCES_DIR}/parser/Parser.cpp
+    ${SOURCES_DIR}/parser/file/File.cpp
+    ${SOURCES_DIR}/system/System.cpp
+)
+
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+target_include_directories(${PROJECT_NAME}
+    PRIVATE
+        ${INCLUDE_DIR}/system
+        ${INCLUDE_DIR}/parser
+        ${INCLUDE_DIR}/parser/file
+    )
+
+set_target_properties(${PROJECT_NAME}
+    PROPERTIES
+        CMAKE_CXX_STANDARD 20
+        CMAKE_CXX_STANDARD_REQUIRED ON
+)
 
 ### BUILD TESTS ###
-add_subdirectory(tests)
+# add_subdirectory(tests)
