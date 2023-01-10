@@ -12,10 +12,16 @@ include_directories(
 set(SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/parser/file/File.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/Parser.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/component/chipset/input/Input.cpp
 )
 
 set(HEADERS
+    ${CMAKE_CURRENT_SOURCE_DIR}/system/System.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/parser/file/File.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/Parser.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/component/interface/IComponent.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/component/chipset/input/Input.hpp
 )
 
 add_executable(

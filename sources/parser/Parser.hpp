@@ -1,8 +1,8 @@
-/* File: parser.hpp
+/* File: Parser.hpp
 **
-** [DESCRIPTION]
+** Header for parser management.
 **
-** 2022, December 28
+** 2022, December 29
 ** Author: Corentin COUTRET-ROZET (corentin.rozet@epitech.eu)
 **
 ** Copyright 2022, Corentin COUTRET-ROZET
@@ -14,11 +14,14 @@
     #include <string>
     #include <iostream>
 
+    #include "File.hpp"
+
     namespace nts
     {
         class Parser
         {
             public:
+                Parser() noexcept = default;
                 Parser(std::string const&) noexcept;
                 Parser(Parser const& b) noexcept = default;
                 Parser(Parser&& b) noexcept = default;

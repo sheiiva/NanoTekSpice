@@ -8,14 +8,11 @@
 ** Copyright 2022, Corentin COUTRET-ROZET
 */
 
-#include "File.hpp"
+#include "System.hpp"
 
 int main(int ac, char **av)
 {
-    nts::File p = nts::File(av[1]);
+    nts::System system;
 
-    p.open(std::ios::in);
-    std::cout << p.read() << std::endl;
-
-    return 0;
+    return system.run(ac, av);
 }
