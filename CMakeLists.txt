@@ -38,6 +38,7 @@ set(SOURCES
     ${SOURCES_DIR}/parser/ArgumentHandler.cpp
     ${SOURCES_DIR}/parser/Parser.cpp
     ${SOURCES_DIR}/parser/file/File.cpp
+    ${SOURCES_DIR}/parser/usage/Usage.cpp
     ${SOURCES_DIR}/system/System.cpp
 )
 
@@ -48,6 +49,7 @@ target_include_directories(${PROJECT_NAME}
         ${INCLUDE_DIR}/system
         ${INCLUDE_DIR}/parser
         ${INCLUDE_DIR}/parser/file
+        ${INCLUDE_DIR}/parser/usage
     )
 
 set_target_properties(${PROJECT_NAME}

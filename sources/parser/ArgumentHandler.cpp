@@ -9,6 +9,7 @@
 */
 
 #include "ArgumentHandler.hpp"
+#include "Usage.hpp"
 
 namespace nts
 {
@@ -18,7 +19,7 @@ namespace nts
             std::cerr << "Error: Wrong number of arguments." << std::endl;
             return (84);
         } else if ((ac == 2) && ((std::string(av[1]) == "-h") || (std::string(av[1]) == "--help"))) {
-            // Usage();
+            Usage();
             return (1);
         }
         return (0);
