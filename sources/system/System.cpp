@@ -19,7 +19,7 @@ namespace nts
         int ret = ArgumentsHandler::check(ac, av);
 
         if (ret)
-            exit ((ret == 84) ? 84 : 0);
+            exit ((ret == EXIT_FAILURE) ? EXIT_FAILURE : EXIT_SUCCESS);
         // Argument parsing
         // Setup components
     }
