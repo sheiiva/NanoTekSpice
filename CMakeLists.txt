@@ -32,6 +32,9 @@ include(${CMAKE_SOURCE_DIR}/config/versions.cmake)
 
 set(SOURCES_DIR ${CMAKE_SOURCE_DIR}/sources)
 set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
+set(CONFIG_DIR ${CMAKE_SOURCE_DIR}/config)
+
+include(${CONFIG_DIR}/boost-config.cmake)
 
 set(SOURCES
     ${SOURCES_DIR}/main.cpp
@@ -51,6 +54,11 @@ target_include_directories(${PROJECT_NAME}
         ${INCLUDE_DIR}/parser/file
         ${INCLUDE_DIR}/parser/usage
     )
+
+target_link_libraries(
+    ${PROJECT_NAME}
+    Boost::log
+)
 
 set_target_properties(${PROJECT_NAME}
     PROPERTIES

@@ -13,6 +13,9 @@
 
     #include <string>
     #include <iostream>
+    #include <boost/log/trivial.hpp>
+
+    #include "Usage.hpp"
 
     namespace nts
     {
