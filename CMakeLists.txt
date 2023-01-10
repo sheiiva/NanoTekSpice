@@ -35,6 +35,7 @@ set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 
 set(SOURCES
     ${SOURCES_DIR}/main.cpp
+    ${SOURCES_DIR}/parser/ArgumentHandler.cpp
     ${SOURCES_DIR}/parser/Parser.cpp
     ${SOURCES_DIR}/parser/file/File.cpp
     ${SOURCES_DIR}/system/System.cpp

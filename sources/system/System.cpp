@@ -1,6 +1,6 @@
 /* File: System.cpp
 **
-** Defintion for System management.
+** Definition for System management.
 **
 ** 2022, December 29
 ** Author: Corentin COUTRET-ROZET (corentin.rozet@epitech.eu)
@@ -9,12 +9,17 @@
 */
 
 #include "System.hpp"
+#include "ArgumentHandler.hpp"
 
 namespace nts
 {
     System::System(int ac, char **av) noexcept : _running(true)
     {
         // Argument checking
+        int ret = ArgumentsHandler::check(ac, av);
+
+        if (ret)
+            exit ((ret == 84) ? 84 : 0);
         // Argument parsing
         // Setup components
     }
