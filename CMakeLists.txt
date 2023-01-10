@@ -56,4 +56,4 @@ set_target_properties(${PROJECT_NAME}
 )
 
 ### BUILD TESTS ###
-# add_subdirectory(tests)
+add_subdirectory(tests)
