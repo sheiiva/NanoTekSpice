@@ -36,6 +36,7 @@ set(CONFIG_DIR ${CMAKE_SOURCE_DIR}/config)
 
 set(SOURCES
     ${SOURCES_DIR}/main.cpp
+    ${SOURCES_DIR}/component/AComponent.cpp
     ${SOURCES_DIR}/parser/ArgumentHandler.cpp
     ${SOURCES_DIR}/parser/Parser.cpp
     ${SOURCES_DIR}/parser/file/File.cpp
@@ -47,10 +48,11 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 
 target_include_directories(${PROJECT_NAME}
     PRIVATE
-        ${INCLUDE_DIR}/system
+        ${INCLUDE_DIR}/component
         ${INCLUDE_DIR}/parser
         ${INCLUDE_DIR}/parser/file
         ${INCLUDE_DIR}/parser/usage
+        ${INCLUDE_DIR}/system
     )
 
 target_link_libraries(
