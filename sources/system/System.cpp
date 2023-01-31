@@ -14,18 +14,13 @@
 
 namespace nts
 {
-    System::System(int ac, char **av) noexcept : _running(true)
+    System::System(int ac, char **av) : _running(true)
     {
         // Argument checking
-        // int ret = ArgumentsHandler::check(ac, av);
-
-        // if (ret)
-        //     std::abort();
-
-        // Argument parsing
-        // _parser.fromFile(av[1]);
+        ArgumentsHandler(ac, av);
 
         // Setup components
+        // Circuit(av[1])
     }
 
     void System::run()
@@ -41,12 +36,14 @@ namespace nts
 
         while (this->_running) {
             std::cout << "> ";
+
+            // Parse input
             std::getline(std::cin, input);
             std::vector<std::string> args = _parser.parseWords(input);
-
             if (args.empty())
                 continue;
 
+            // Execute command
             try {
                 const auto& command = commands.find(args[0]);
                 if (command != commands.end())

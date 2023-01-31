@@ -12,19 +12,20 @@
     #define USAGE_HPP_
 
     #include <iostream>
+    #include <exception>
+
+    #define USAGE_ "\
+    USAGE\n\
+        ./nanotekspice [FILE.nts]\n\
+    \n\
+    DESCRIPTION\n\
+        FILE.nts\t\tgraph description of the circuit."
 
     namespace nts
     {
-        class Usage
-        {
+        class Usage : public std::exception {
             public:
-                Usage() noexcept;
-                Usage(Usage const& b) noexcept = default;
-                Usage(Usage&& b) noexcept = default;
-                ~Usage() noexcept = default;
-        
-                Usage& operator=(Usage const& rhs) noexcept = default;
-                Usage& operator=(Usage&& rhs) noexcept = default;
+                const char *what() const noexcept override {return USAGE_;}
         };
     }
 

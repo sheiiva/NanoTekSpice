@@ -15,7 +15,7 @@
     #include <iostream>
     #include <fstream>
 
-    namespace nts
+    namespace tools
     {
         class File
         {
@@ -28,16 +28,16 @@
                 File& operator=(File const& rhs) noexcept = default;
                 File& operator=(File&& rhs) noexcept = default;
 
-                void                open(std::ios::openmode const&) noexcept;
-                void                close(void) noexcept;
-                std::string         read(void) noexcept;
-                bool                readLine(std::string &) noexcept;
-                void                showContent(void) noexcept;
+                void            open(std::ios::openmode const&);
+                void            close(void);
+                std::string     read(void);
+                bool            readLine(std::string &);
+                void            showContent(void) noexcept;
 
             private:
-                std::string _name;
-                std::string _content;
-                std::fstream _fs;
+                std::string     _name;
+                std::string     _content;
+                std::fstream    _fs;
         };
     }
 

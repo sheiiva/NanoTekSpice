@@ -12,19 +12,6 @@
 
 namespace nts
 {
-    void Parser::fromFile(std::string const& filename)
-    {
-        File file = File(filename);
-        std::string line;
-
-        file.open(std::ios::in);
-        while (file.readLine(line)) {
-            std::cout << line << std::endl;
-        }
-
-        file.close();
-    }
-
     std::vector<std::string> Parser::parseWords(std::string const& line)
     {
         std::vector<std::string> words;

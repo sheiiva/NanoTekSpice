@@ -19,7 +19,7 @@
         {
             public:
                 System() = delete;
-                System(int ac, char **av) noexcept;
+                System(int ac, char **av);
                 System(System const& b) noexcept = default;
                 System(System&& b) noexcept = default;
                 ~System() noexcept = default;

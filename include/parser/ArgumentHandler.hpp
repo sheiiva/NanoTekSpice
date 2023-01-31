@@ -21,7 +21,8 @@
         class ArgumentsHandler
         {
             public:
-                ArgumentsHandler() noexcept = default;
+                ArgumentsHandler() noexcept = delete;
+                ArgumentsHandler(int ac, char **av);
                 ArgumentsHandler(ArgumentsHandler const& b) noexcept = default;
                 ArgumentsHandler(ArgumentsHandler&& b) noexcept = default;
                 ~ArgumentsHandler() noexcept = default;
@@ -30,15 +31,7 @@
                 ArgumentsHandler& operator=(ArgumentsHandler&& rhs) noexcept = default;
 
             private:
-                int run(int ac, char **av) noexcept;
-
-            public:
-                static int check(int ac, char **av) noexcept
-                {
-                    ArgumentsHandler argumentsHandler;
-
-                    return (argumentsHandler.run(ac, av));
-                }
+                void run(int ac, char **av);
         };
     }
 

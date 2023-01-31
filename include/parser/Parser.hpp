@@ -34,7 +34,6 @@
                 Parser& operator=(Parser const& rhs) noexcept = default;
                 Parser& operator=(Parser&& rhs) noexcept = default;
 
-                void fromFile(std::string const& filename);
                 std::vector<std::string> parseWords(std::string const& line);
         };
     }

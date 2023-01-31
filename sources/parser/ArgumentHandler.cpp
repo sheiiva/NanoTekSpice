@@ -12,15 +12,16 @@
 
 namespace nts
 {
-    int ArgumentsHandler::run(int ac, char **av) noexcept
+    ArgumentsHandler::ArgumentsHandler(int ac, char **av)
     {
-        if (ac != 2) {
-            std::cerr << "Error: Wrong number of arguments." << std::endl;
-            return (84);
-        } else if ((ac == 2) && ((std::string(av[1]) == "-h") || (std::string(av[1]) == "--help"))) {
-            Usage();
-            return (1);
-        }
-        return (0);
+        this->run(ac, av);
+    }
+
+    void ArgumentsHandler::run(int ac, char **av)
+    {
+        if (ac != 2)
+            throw std::invalid_argument("Invalid number of arguments.");
+        else if ((ac == 2) && ((std::string(av[1]) == "-h") || (std::string(av[1]) == "--help")))
+            throw Usage();
     }
 }
