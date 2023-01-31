@@ -12,7 +12,13 @@
 
 int main(int ac, char **av)
 {
-    nts::System system(ac, av);
+    try {
+        nts::System system(ac, av);
 
-    return system.run();
+        system.run();
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << std::string(e.what()) << std::endl;
+        return 84;
+    }
+    return 0;
 }

@@ -12,7 +12,11 @@
     #define PARSER_HPP
 
     #include <string>
+    #include <vector>
     #include <iostream>
+    #include <sstream>
+    #include <unordered_map>
+    #include <functional>
 
     #include "File.hpp"
 
@@ -30,7 +34,8 @@
                 Parser& operator=(Parser const& rhs) noexcept = default;
                 Parser& operator=(Parser&& rhs) noexcept = default;
 
-            private:
+                void fromFile(std::string const& filename);
+                std::vector<std::string> parseWords(std::string const& line);
         };
     }
 

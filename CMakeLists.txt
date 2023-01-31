@@ -34,8 +34,6 @@ set(SOURCES_DIR ${CMAKE_SOURCE_DIR}/sources)
 set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 set(CONFIG_DIR ${CMAKE_SOURCE_DIR}/config)
 
-include(${CONFIG_DIR}/boost-config.cmake)
-
 set(SOURCES
     ${SOURCES_DIR}/main.cpp
     ${SOURCES_DIR}/parser/ArgumentHandler.cpp
@@ -57,7 +55,6 @@ target_include_directories(${PROJECT_NAME}
 
 target_link_libraries(
     ${PROJECT_NAME}
-    Boost::log
 )
 
 set_target_properties(${PROJECT_NAME}

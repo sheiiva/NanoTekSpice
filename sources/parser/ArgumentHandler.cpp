@@ -15,7 +15,7 @@ namespace nts
     int ArgumentsHandler::run(int ac, char **av) noexcept
     {
         if (ac != 2) {
-            BOOST_LOG_TRIVIAL(error) << "Error: Wrong number of arguments.";
+            std::cerr << "Error: Wrong number of arguments." << std::endl;
             return (84);
         } else if ((ac == 2) && ((std::string(av[1]) == "-h") || (std::string(av[1]) == "--help"))) {
             Usage();

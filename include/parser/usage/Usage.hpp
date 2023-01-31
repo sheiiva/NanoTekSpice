@@ -12,7 +12,6 @@
     #define USAGE_HPP_
 
     #include <iostream>
-    #include <boost/log/trivial.hpp>
 
     namespace nts
     {

@@ -12,13 +12,32 @@
 
 namespace nts
 {
-    Parser::Parser(std::string const& filename) noexcept
+    void Parser::fromFile(std::string const& filename)
     {
-        File p = File(filename);
+        File file = File(filename);
+        std::string line;
 
-        p.open(std::ios::in);
-        std::string fileContent = p.read();
+        file.open(std::ios::in);
+        while (file.readLine(line)) {
+            std::cout << line << std::endl;
+        }
 
-        p.close();
+        file.close();
     }
+
+    std::vector<std::string> Parser::parseWords(std::string const& line)
+    {
+        std::vector<std::string> words;
+        std::stringstream sstream(line);
+
+        while (sstream) {
+            std::string word;
+            sstream >> word;
+            if (!word.empty())
+                words.push_back(word);
+        }
+
+        return words;
+    }
+
 }

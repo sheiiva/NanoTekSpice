@@ -42,6 +42,11 @@ namespace nts
         return this->_content;
     }
 
+    bool File::readLine(std::string &line) noexcept
+    {
+        return std::getline(this->_fs, line).eof() == false;
+    }
+
     void File::showContent(void) noexcept
     {
         std::cout << this->_content << std::endl;
